@@ -1,11 +1,13 @@
+#get_dummy_dataset.py changes the features in the original dataset to numerical features
+
 from pickle import load
 from pickle import dump
 
 
-dummy_file = open("dataset_dummy","rb")
+dummy_file = open("..\\datasets\\dataset_dummy","rb")
 dictionary = load(dummy_file)
 
-with open('..\\dataset.csv','r') as dataset:
+with open('..\\datasets\\dataset.csv','r') as dataset:
     X = []
     first_line = True
     for line in dataset:
@@ -24,6 +26,6 @@ with open('..\\dataset.csv','r') as dataset:
                     tmp.append(dictionary[item])
             X.append(tmp)
         first_line = False
-with open("dataset_transformed","wb") as save:
+with open("..\\datasets\\dataset_transformed","wb") as save:
     dump(X,save)
     

@@ -5,7 +5,7 @@ import pickle
 from sklearn.metrics import label_ranking_average_precision_score
 
 # load dataset
-f = open('dataset_transformed',"rb")
+f = open('..\\data\\datasets\\dataset_transformed',"rb")
 dataset = pickle.load(f)
 size = 0.7
 sample_size = len(dataset)*size  # percentage of traning sample size
