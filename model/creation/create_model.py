@@ -38,7 +38,7 @@ def creat_tree_model(dataset_path,write_path):
         Y_training.append(data[0])
 
         
-    classifier = tree.DecisionTreeClassifier(max_depth=23)
+    classifier = tree.DecisionTreeClassifier(max_depth=4)
     classifier = classifier.fit(X_training,Y_training)
 
     with open(write_path,"wb") as writer:
