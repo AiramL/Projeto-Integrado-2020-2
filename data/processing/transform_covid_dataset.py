@@ -30,6 +30,20 @@ covid_dataset = covid_dataset.drop(covid_dataset.loc[:,'None_Experiencing':'Cont
 covid_dataset = covid_dataset.drop(['None_Sympton'],axis=1)
 
 ################################################
+# Modify symptons to comply with diseases dataset
+################################################
+
+covid_dataset = covid_dataset.replace('Difficulty-in-Breathing','breathlessness')
+covid_dataset = covid_dataset.replace('Fever','high_fever')
+covid_dataset = covid_dataset.replace('Tiredness','fatigue')
+covid_dataset = covid_dataset.replace('Dry-Cough','cough')
+covid_dataset = covid_dataset.replace('Sore-Throat','throat_irritation')
+covid_dataset = covid_dataset.replace('Pains','chest_pain')
+covid_dataset = covid_dataset.replace('Nasal-Congestion','nasal_congestion')
+covid_dataset = covid_dataset.replace('Runny-Nose','runny_nose')
+covid_dataset = covid_dataset.replace('Diarrhea','diarrhoea')
+
+################################################
 # Insert column with disease name and save file
 ################################################
 covid_dataset.insert(0,'Disease','Covid')
