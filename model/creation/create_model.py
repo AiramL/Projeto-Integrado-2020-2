@@ -10,6 +10,7 @@
 
 
 from sklearn import tree
+from sklearn.ensemble import RandomForestClassifier
 from random import randint
 from pickle import load
 from pickle import dump
@@ -38,7 +39,9 @@ def creat_tree_model(dataset_path,write_path):
         Y_training.append(data[0])
 
         
-    classifier = tree.DecisionTreeClassifier(max_depth=4)
+    #classifier = tree.DecisionTreeClassifier(max_depth=5)
+    classifier = tree.DecisionTreeClassifier(max_depth=23)
+    #classifier  = RandomForestClassifier(max_depth=23) 
     classifier = classifier.fit(X_training,Y_training)
 
     with open(write_path,"wb") as writer:

@@ -1,4 +1,4 @@
-# Project Name: TEAPS - Triagem Eficiente e ¡gil de Pacientes Sintom·ticos 
+# Project Name: TEAPS - Triagem Eficiente e √Ågil de Pacientes Sintom√°ticos 
 #
 # Authors:      Gustavo Camilo, Lucas Airam and Vicinicius Aguiar
 # Affiliation:  Universidade Federal do Rio de Janeiro
