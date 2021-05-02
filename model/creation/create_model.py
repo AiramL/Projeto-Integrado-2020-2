@@ -39,8 +39,6 @@ def create_tree_model(dataset_path,write_path):
         Y_training.append(data[0])
 
         
-    #classifier = tree.DecisionTreeClassifier(max_depth=5)
-    #classifier = tree.DecisionTreeClassifier(max_depth=5)
     classifier  = RandomForestClassifier(max_depth=5) 
     classifier = classifier.fit(X_training,Y_training)
 
