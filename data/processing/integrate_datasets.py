@@ -41,7 +41,7 @@ for index in range(8):
 # Add entries from covid_dataset to disease_dataset and save to file
 #####################################################################
 
-covid_sample = covid_dataset.sample(n=50)
+covid_sample = covid_dataset.sample(n=100)
 disease_dataset = disease_dataset.append(covid_sample, ignore_index=True)
 
 disease_dataset.to_csv(INTEGRATED_DATASET_PATH,index=False)

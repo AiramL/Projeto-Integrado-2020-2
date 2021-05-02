@@ -26,7 +26,7 @@ def visualize_confusion_matriz(model,model_test_data):
 
 
 if __name__ == "__main__":
-    visualize_confusion_matriz("..\\..\\model\\classifier","..\\..\\model\\model_test_data")    
+    visualize_confusion_matriz("..\\..\\model\\model","..\\..\\model\\model_test_data")    
 
 
 

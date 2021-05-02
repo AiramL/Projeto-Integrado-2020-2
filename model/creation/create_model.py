@@ -16,7 +16,7 @@ from pickle import load
 from pickle import dump
 import pickle
 
-def creat_tree_model(dataset_path,write_path):
+def create_tree_model(dataset_path,write_path):
     dataset = load(open(dataset_path,"rb"))
     size = 0.7
     sample_size = len(dataset)*size 
@@ -40,8 +40,8 @@ def creat_tree_model(dataset_path,write_path):
 
         
     #classifier = tree.DecisionTreeClassifier(max_depth=5)
-    classifier = tree.DecisionTreeClassifier(max_depth=23)
-    #classifier  = RandomForestClassifier(max_depth=23) 
+    #classifier = tree.DecisionTreeClassifier(max_depth=5)
+    classifier  = RandomForestClassifier(max_depth=5) 
     classifier = classifier.fit(X_training,Y_training)
 
     with open(write_path,"wb") as writer:
@@ -56,6 +56,6 @@ def creat_tree_model(dataset_path,write_path):
 
 
 if __name__ == "__main__":
-    creat_tree_model('..\\..\\data\\datasets\\transformed\\dataset_transformed','..\\model')
+    create_tree_model('..\\..\\data\\datasets\\transformed\\dataset_transformed','..\\model')
     
 
