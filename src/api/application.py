@@ -10,6 +10,10 @@ import pathlib
 SECRET_KEY = 'development'
 symptons_path = '/Users/vinob/Projeto-Integrado-2020-2/data/datasets/transformed/dataset_dummy'
 
+symptons_file = os.path.join(pathlib.Path(__file__), symptons_path)
+symptons = sorted([x.strip() for x in list(load(open(symptons_file, 'rb')).keys()) if
+                   type(x) == str])
+
 bootstrap = Bootstrap()
 application = Flask(__name__)
 application.config.from_object(__name__)
