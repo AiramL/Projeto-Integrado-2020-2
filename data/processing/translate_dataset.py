@@ -1,3 +1,14 @@
+# Project Name: TEAPS - Triagem Eficiente e Ágil de Pacientes Sintomáticos 
+#
+# Authors:      Gustavo Camilo, Lucas Airam and Vicinicius Aguiar
+# Affiliation:  Universidade Federal do Rio de Janeiro
+#
+#
+#
+#
+# translate_dataset.py translate the features and labels in the diseases dataset
+
+
 from pickle import dump
 
 disease_translation  ={
@@ -153,39 +164,40 @@ symptom_translation = {'0':'nan',
                        '106':'fala arrastada',
                        '107':'dor nas costas',
                        '108':'rosto e olhos inchados',
-                       ' receiving_blood_transfusion': 109,
-                       ' sweating': 110,
-                       ' patches_in_throat': 111,
-                       ' headache': 112,
-                       ' blurred_and_distorted_vision': 113,
-                       ' irregular_sugar_level': 114,
-                       ' belly_pain': 115,
-                       ' cramps': 116,
-                       ' stomach_pain': 117,
-                       ' distention_of_abdomen': 118,
-                       ' fast_heart_rate': 119,
-                       ' fluid_overload': 120, 
+                       '109':'recebendo transfusão de sangue',
+                       '110':'suor',
+                       '111':'manchas na garganta',
+                       '112':'dor de cabeça',
+                       '113':'visão turva e distorcida',
+                       '114':'irregular_sugar_level',
+                       '115':'dor de barriga',
+                       '116':'cólicas',
+                       '117':'dor estomacal',
+                       '118':'distensão do abdômen',
+                       '119':'freqüência cardíaca rápida',
+                       '120':'sobrecarga de fluido', 
                        '121':'perda de apetite',
-                       ' dischromic _patches': 122,
+                       '122':'manchas discrômicas',
                        '123':'fraqueza muscular',
                        '124':'perda de equilíbro',
-                       'skin_rash': 125,
-                       ' blood_in_sputum': 126,
+                       '125':'erupção cutânea',
+                       '126':'sangue na expectoração',
                        '127':'olhos avermelhados',
                        '128':'tosse',
-                       'muscle_wasting': 129,
-                       ' stiff_neck': 130, '131':'coceira',
-                       ' burning_micturition': 132,
-                       ' spinning_movements': 133,
-                       ' scurring': 134,
-                       ' restlessness': 135,
-                       ' blackheads': 136,
-                       ' passage_of_gases': 137,
+                       '129':'perda de massa muscular',
+                       '130':'torcicolo',
+                       '131':'coceira',
+                       '132':'queima de micção',
+                       '133':'sensação de movimentos giratórios',
+                       '134':'sensação de aceleração',
+                       '135':'inquietação',
+                       '136':'cravos pretos',
+                       '137':'gases',
                        '138':'nariz escorrendo',
                        '139':'perda de peso',
-                       ' pain_during_bowel_movements': 140}
+                       '140':'dor durante as evacuações'}
 
 
-dump(disease_translation,open("dummy_class_pt_translation","wb"))
-dump(symptom_translation,open("dummy_dataset_pt_translation","wb"))
+dump(disease_translation,open("..\\datasets\\transformed\\dummy_class_pt_translation","wb"))
+dump(symptom_translation,open("..\\datasets\\transformed\\dummy_dataset_pt_translation","wb"))
 
