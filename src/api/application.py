@@ -8,13 +8,13 @@ from pickle import load
 import pathlib
 
 SECRET_KEY = 'development'
-model_path = '/Users/vinob/Projeto-Integrado-2020-2/model/model'
+model_path = '..\\..\\..\\model\\model'
 model_file = os.path.join(pathlib.Path(__file__), model_path)
 model = load(open(model_file, 'rb'))
 
-symptons_path = '/Users/vinob/Projeto-Integrado-2020-2/data/datasets/transformed/dummy_dataset_pt_translation'
-diseases_pt_br_path = '/Users/vinob/Projeto-Integrado-2020-2/data/datasets/transformed/dummy_class_pt_translation'
-diseases_en_us_path = '/Users/vinob/Projeto-Integrado-2020-2/data/datasets/transformed/class_dummy'
+symptons_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_dataset_pt_translation'
+diseases_pt_br_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_class_pt_translation'
+diseases_en_us_path = '..\\..\\..\\data\\datasets\\transformed\\class_dummy'
 
 symptons_file = os.path.join(pathlib.Path(__file__), symptons_path)
 symptons = list(load(open(symptons_file, 'rb')).items())
