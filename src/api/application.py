@@ -6,15 +6,24 @@ from wtforms import widgets, SelectMultipleField, SubmitField, SelectField
 import os
 from pickle import load
 import pathlib
+from platform import system
 
 SECRET_KEY = 'development'
-model_path = '..\\..\\..\\model\\model'
+if system() == "Windows":
+    model_path = '..\\..\\..\\model\\model'
+else:
+    model_path = '../../../model/model'
 model_file = os.path.join(pathlib.Path(__file__), model_path)
 model = load(open(model_file, 'rb'))
 
-symptons_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_dataset_pt_translation'
-diseases_pt_br_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_class_pt_translation'
-diseases_en_us_path = '..\\..\\..\\data\\datasets\\transformed\\class_dummy'
+if system() == "Windows":
+    symptons_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_dataset_pt_translation'
+    diseases_pt_br_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_class_pt_translation'
+    diseases_en_us_path = '..\\..\\..\\data\\datasets\\transformed\\class_dummy'
+else:
+    symptons_path = '../../../data/datasets/transformed/dummy_dataset_pt_translation'
+    diseases_pt_br_path = '../../../data/datasets/transformed/dummy_class_pt_translation'
+    diseases_en_us_path = '../../../data/datasets/transformed/class_dummy'
 
 symptons_file = os.path.join(pathlib.Path(__file__), symptons_path)
 symptons = list(load(open(symptons_file, 'rb')).items())
