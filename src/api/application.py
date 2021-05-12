@@ -18,17 +18,20 @@ model = load(open(model_file, 'rb'))
 
 if system() == "Windows":
     symptons_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_dataset_pt_translation'
+    professional_path = '..\\..\\data\\datasets\\transformed\\professionals_pt'
     diseases_pt_br_path = '..\\..\\..\\data\\datasets\\transformed\\dummy_class_pt_translation'
     diseases_en_us_path = '..\\..\\..\\data\\datasets\\transformed\\class_dummy'
 else:
     symptons_path = '../../../data/datasets/transformed/dummy_dataset_pt_translation'
     diseases_pt_br_path = '../../../data/datasets/transformed/dummy_class_pt_translation'
+    professional_path = '../../../data/datasets/transformed/professionals_pt'
     diseases_en_us_path = '../../../data/datasets/transformed/class_dummy'
 
 symptons_file = os.path.join(pathlib.Path(__file__), symptons_path)
 symptons = list(load(open(symptons_file, 'rb')).items())
 translate_symptons_dict = {int(i): s for i, s in symptons if int(i) != 0}
 
+professional_dict = load(open(professional_path,'rb'))
 diseases_file = os.path.join(pathlib.Path(__file__), diseases_en_us_path)
 diseases_en_us = list(load(open(diseases_file, 'rb')).keys())
 diseases_file = os.path.join(pathlib.Path(__file__), diseases_pt_br_path)
@@ -75,6 +78,6 @@ def hello_world():
 def predict():
     sintomas = [translate_symptons_dict[int(x)] for x in request.form.getlist('symptons')]
     doenca = translate_disease(predict_disease(request.form.getlist('symptons')))
-    frase = 'Seus sintomas são ' + ', '.join(sintomas) + '.\n\nNosso sistema acredita que você esteja com ' + doenca + '.'
-
+    profissional = professional_dict[str(doenca)]
+    frase = 'Seus sintomas são ' + ', '.join(sintomas) + '.\n\nNosso sistema acredita que você esteja com ' + doenca + '. <a href=\"https://www.google.com/maps/search/'+profissional+'\">Clique aqui</a> e consulte um especilista próximo à sua localização atual.' 
     return frase

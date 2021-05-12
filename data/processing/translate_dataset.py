@@ -28,7 +28,7 @@ disease_translation  ={
                 '13':'Impetigo',
                 '14':'Artrite',
                 '15':'Gastroenterite',
-                '16':'GERD',
+                '16':'Refluxo gastroesofágico',
                 '17':'Icterícia',
                 '18':'Acne',
                 '19':'Covid',
@@ -50,7 +50,7 @@ disease_translation  ={
                 '35':'Enxaqueca',
                 '36':'Hipertensão',
                 '37':'Hepatite D',
-                '38':'Diabetes ',
+                '38':'Diabetes',
                 '39':'Hepatite E',
                 '40':'Osteoartrite',
                 '41':'Resfriado'}
@@ -197,7 +197,53 @@ symptom_translation = {'0':'nan',
                        '139':'perda de peso',
                        '140':'dor durante as evacuações'}
 
+disease_professional = {
+                'Espondilose cervical':'fisioterapeuta',
+                'Hipoglicemia':'endocrinologista',
+                'Tuberculose':'pneumologista',
+                'Ataque cardíaco':'cardiologista',
+                '(vertigem) Vertigem posicional paroxística':'clínico+geral',
+                'Colestase crônica':'hepatologista',
+                'Alergia':'alergista',
+                'Infecção fúngica':'infectologista',
+                'Paralisia (hemorragia cerebral)':'neurologista',
+                'Hemorróidas dimórficas (pilhas)':'proctologista',
+                'Psoríase':'dermatologista',
+                'AIDS':'infectologista',
+                'Infecção do trato urinário':'urologista',
+                'Impetigo':'dermatologista',
+                'Artrite':'reumatologista',
+                'Gastroenterite':'gastroenterologista',
+                'Refluxo gastroesofágico':'gastroenterologista',
+                'Icterícia':'gastroenterologista',
+                'Acne':'dermatologista',
+                'Covid':'clínico+geral',
+                'Reação a Medicamentos':'alergista',
+                'Tifóide':'infectologista',
+                'Varizes':'cirurgião+vascular',
+                'Dengue':'infectologista',
+                'Hipotireoidismo':'endocrinologista',
+                'Hepatite alcoolíca':'hepatologista',
+                'Úlcera péptica doença':'gastroenterologista',
+                'Hepatite C':'hepatologista',
+                'Pneumonia':'pneumologista',
+                'Catapora':'clínico+geral',
+                'Hepatite B':'hepatologista',
+                'Asma brônquica':'pneumologista',
+                'Hipertireoidismo':'endocrinologista',
+                'Malaria':'infectologista',
+                'Hepatite A':'hepatologista',
+                'Enxaqueca':'clínico+geral',
+                'Hipertensão':'cardiologista',
+                'Hepatite D':'hepatologista',
+                'Diabetes':'endocrinologista',
+                'Hepatite E':'hepatologista',
+                'Osteoartrite':'reumatologista',
+                'Resfriado':'clínico+geral'}
 
+
+
+dump(disease_professional,open("..\\datasets\\transformed\\professionals_pt","wb"))
 dump(disease_translation,open("..\\datasets\\transformed\\dummy_class_pt_translation","wb"))
 dump(symptom_translation,open("..\\datasets\\transformed\\dummy_dataset_pt_translation","wb"))
 
